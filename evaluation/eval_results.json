@@ -1,0 +1,92 @@
+[
+  {
+    "id": "eval_01",
+    "query": "What is the chunking strategy used in the RAG pipeline?",
+    "expected_intent": "KNOWLEDGE_LOOKUP",
+    "actual_intent": "KNOWLEDGE_LOOKUP",
+    "expected_rag": true,
+    "actual_rag": true,
+    "passed": true
+  },
+  {
+    "id": "eval_02",
+    "query": "What is 24 multiplied by 17, then divided by 4?",
+    "expected_intent": "COMPUTATION",
+    "actual_intent": "COMPUTATION",
+    "expected_rag": false,
+    "actual_rag": false,
+    "passed": true
+  },
+  {
+    "id": "eval_03",
+    "query": "What's your opinion on the best programming language?",
+    "expected_intent": "GENERAL_REASONING",
+    "actual_intent": "GENERAL_REASONING",
+    "expected_rag": false,
+    "actual_rag": false,
+    "passed": true
+  },
+  {
+    "id": "eval_04",
+    "query": "What is the capital of France?",
+    "expected_intent": "GENERAL_REASONING",
+    "actual_intent": "GENERAL_REASONING",
+    "expected_rag": false,
+    "actual_rag": false,
+    "passed": true
+  },
+  {
+    "id": "eval_05",
+    "query": "According to the document, what evaluation criteria will be used to assess this project?",
+    "expected_intent": "KNOWLEDGE_LOOKUP",
+    "actual_intent": "KNOWLEDGE_LOOKUP",
+    "expected_rag": true,
+    "actual_rag": true,
+    "passed": true
+  },
+  {
+    "id": "eval_06",
+    "query": "Search the web for the latest news on AI regulation.",
+    "expected_intent": "GENERAL_REASONING",
+    "actual_intent": "GENERAL_REASONING",
+    "expected_rag": false,
+    "actual_rag": false,
+    "passed": true
+  },
+  {
+    "id": "eval_07",
+    "query": "What is the square root of 144 plus 10?",
+    "expected_intent": "COMPUTATION",
+    "actual_intent": "COMPUTATION",
+    "expected_rag": false,
+    "actual_rag": false,
+    "passed": true
+  },
+  {
+    "id": "eval_08",
+    "query": "What is quantum entanglement and how does it relate to FTL communication?",
+    "expected_intent": "GENERAL_REASONING",
+    "actual_intent": "GENERAL_REASONING",
+    "expected_rag": false,
+    "actual_rag": false,
+    "passed": true
+  },
+  {
+    "id": "eval_09",
+    "query": "What tools are required in this project according to the requirements?",
+    "expected_intent": "KNOWLEDGE_LOOKUP",
+    "actual_intent": "KNOWLEDGE_LOOKUP",
+    "expected_rag": true,
+    "actual_rag": true,
+    "passed": true
+  },
+  {
+    "id": "eval_10",
+    "query": "Explain what a transformer model is in deep learning.",
+    "expected_intent": "GENERAL_REASONING",
+    "actual_intent": "GENERAL_REASONING",
+    "expected_rag": false,
+    "actual_rag": false,
+    "passed": true
+  }
+]

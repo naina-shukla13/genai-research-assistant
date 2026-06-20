@@ -1,0 +1,28 @@
+# LLM & Agent Framework
+agno==1.2.6
+openai==1.54.0          # OpenRouter is OpenAI-compatible, used via base_url override
+
+# Vector Store
+duckdb==1.1.3
+
+# Embeddings
+sentence-transformers==3.2.1
+numpy==1.26.4
+
+# Document Loading & Chunking
+pypdf==5.1.0
+langchain-text-splitters==0.3.2
+
+# Config & Validation
+pydantic==2.9.2
+pydantic-settings==2.6.1
+python-dotenv==1.0.1
+
+# UI (optional)
+streamlit==1.40.0
+
+# Logging / Tracing
+rich==13.9.4
+
+# Dev / Testing
+pytest==8.3.3

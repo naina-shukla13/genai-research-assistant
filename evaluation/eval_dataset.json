@@ -1,0 +1,72 @@
+[
+  {
+    "id": "eval_01",
+    "query": "What is the chunking strategy used in the RAG pipeline?",
+    "expected_intent": "KNOWLEDGE_LOOKUP",
+    "expected_behavior": "Should retrieve chunks from knowledge base docs about chunking and ground the answer in them.",
+    "should_use_rag": true
+  },
+  {
+    "id": "eval_02",
+    "query": "What is 24 multiplied by 17, then divided by 4?",
+    "expected_intent": "COMPUTATION",
+    "expected_behavior": "Should route to General Agent, call the calculator tool, and return the correct numeric result.",
+    "should_use_rag": false
+  },
+  {
+    "id": "eval_03",
+    "query": "What's your opinion on the best programming language?",
+    "expected_intent": "GENERAL_REASONING",
+    "expected_behavior": "Should route to General Agent and answer via reasoning alone, no tool call needed.",
+    "should_use_rag": false
+  },
+  {
+    "id": "eval_04",
+    "query": "What is the capital of France?",
+    "expected_intent": "GENERAL_REASONING",
+    "expected_behavior": "General world knowledge, not in knowledge base — must NOT trigger RAG.",
+    "should_use_rag": false
+  },
+  {
+    "id": "eval_05",
+    "query": "According to the document, what evaluation criteria will be used to assess this project?",
+    "expected_intent": "KNOWLEDGE_LOOKUP",
+    "expected_behavior": "Should retrieve relevant chunks listing evaluation criteria and cite them.",
+    "should_use_rag": true
+  },
+  {
+    "id": "eval_06",
+    "query": "Search the web for the latest news on AI regulation.",
+    "expected_intent": "GENERAL_REASONING",
+    "expected_behavior": "Should trigger the (mocked) web_search tool explicitly, with mocked=true in output.",
+    "should_use_rag": false
+  },
+  {
+    "id": "eval_07",
+    "query": "What is the square root of 144 plus 10?",
+    "expected_intent": "COMPUTATION",
+    "expected_behavior": "Calculator tool should handle compound arithmetic correctly.",
+    "should_use_rag": false
+  },
+  {
+    "id": "eval_08",
+    "query": "What is quantum entanglement and how does it relate to FTL communication?",
+    "expected_intent": "GENERAL_REASONING",
+    "expected_behavior": "Out-of-scope for knowledge base — tests that classifier does NOT default to KNOWLEDGE_LOOKUP for any technical-sounding query.",
+    "should_use_rag": false
+  },
+  {
+    "id": "eval_09",
+    "query": "What tools are required in this project according to the requirements?",
+    "expected_intent": "KNOWLEDGE_LOOKUP",
+    "expected_behavior": "Should retrieve chunks mentioning the minimum 2 tools requirement.",
+    "should_use_rag": true
+  },
+  {
+    "id": "eval_10",
+    "query": "Explain what a transformer model is in deep learning.",
+    "expected_intent": "GENERAL_REASONING",
+    "expected_behavior": "Plausible knowledge-base-sounding topic but NOT in our specific case-study doc — should test classifier's restraint and Retriever's 'no relevant chunks' honesty if misrouted.",
+    "should_use_rag": false
+  }
+]
