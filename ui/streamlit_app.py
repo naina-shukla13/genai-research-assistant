@@ -12,17 +12,8 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import streamlit as st
-from core.coordinator import coordinator
-from utils.exceptions import AssistantBaseException
 
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-
-import streamlit as st
-from core.coordinator import coordinator
-from utils.exceptions import AssistantBaseException
+st.set_page_config(page_title="AI Research Assistant", page_icon="🧭", layout="wide")
 
 # ── Auto-ingest on first load (deployed environments start with an empty
 # vector store, since storage/vectors.duckdb is gitignored) ──────────────
@@ -33,9 +24,8 @@ if vector_store.is_empty():
         from scripts.ingest import run_ingestion
         run_ingestion()
 
-st.set_page_config(page_title="AI Research Assistant", page_icon="🧭", layout="wide")
-
-st.set_page_config(page_title="AI Research Assistant", page_icon="🧭", layout="wide")
+from core.coordinator import coordinator
+from utils.exceptions import AssistantBaseException
 
 st.title("🧭 AI Research Assistant")
 st.caption("Multi-agent system: Coordinator → Retriever / General Agent")
