@@ -7,6 +7,11 @@ Why local embeddings instead of calling OpenRouter for embeddings:
 - Local embeddings (all-MiniLM-L6-v2, ~80MB) are fast, free, deterministic,
   and don't introduce an external dependency into the retrieval critical
   path. This is a tradeoff we explicitly document in the README.
+
+Device is forced to CPU explicitly. Newer torch/transformers releases
+default to a lazy "meta device" initialization path that can fail with
+a NotImplementedError on some cloud environments (observed on Streamlit
+Community Cloud); forcing device="cpu" up front avoids that path entirely.
 """
 
 from typing import List
@@ -25,7 +30,7 @@ def _get_model() -> SentenceTransformer:
     model_name = settings.embedding_model
     if model_name not in _model_cache:
         with trace_step("Embedder", "load_model", model_name=model_name):
-            _model_cache[model_name] = SentenceTransformer(model_name)
+            _model_cache[model_name] = SentenceTransformer(model_name, device="cpu")
     return _model_cache[model_name]
 
 
